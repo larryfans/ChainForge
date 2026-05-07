@@ -31,7 +31,7 @@ PYTHONPATH=. python <domain>_v6_auto/generate_tool_param_v17.py --all-task-logs
 Example domain commands:
 
 ```bash
-PYTHONPATH=. python banking_v7_auto/generate_tool_param_v17.py --all-task-logs
+PYTHONPATH=. python banking_v6_auto/generate_tool_param_v17.py --all-task-logs
 PYTHONPATH=. python slack_v6_auto/generate_tool_param_v17.py --all-task-logs
 PYTHONPATH=. python travel_v6_auto/generate_tool_param_v17.py --all-task-logs
 PYTHONPATH=. python workspace_v6_auto/generate_tool_param_v17.py --all-task-logs
