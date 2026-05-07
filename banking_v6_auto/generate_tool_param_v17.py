@@ -1,4 +1,4 @@
-#  PYTHONPATH=. python banking_v7_auto/generate_tool_param_v17.py --all-task-logs
+#  PYTHONPATH=. python banking_v6_auto/generate_tool_param_v17.py --all-task-logs
 
 from __future__ import annotations
 
