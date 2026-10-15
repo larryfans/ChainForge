@@ -1,4 +1,11 @@
-# ChainForge Workflow
+# ChainForge: Tool-Chain Hijacking Attacks against LLM Agents via Execution-Grounded Tool Synthesis
+## 🎉🎉🎉 Accepted by The Fortieth Annual Conference on Neural Information Processing Systems
+
+## Abstract
+LLM-based agents increasingly rely on external tools to accomplish complex tasks, yet the security of tool-calling pipelines remains poorly understood at the chain level. Prior attacks target individual tool invocations through prompt injection or metadata manipulation, but compromising a single step in a multi-step workflow is conspicuous and rarely sufficient for complex adversarial objectives. In this work, we uncover a more insidious yet realistic attack surface, tool-chain hijacking, in which an adversary constructs a coherent sequence of tools that collectively replace the agent's intended execution trace while still completing the user's task correctly, rendering the hijack invisible to both the agent and the user. To operationalize this threat, we propose ChainForge, an execution-grounded framework that mines agent execution logs to synthesize replacement chains through rollout-based optimization, then embeds adversarial payloads into the chain's code via multi-criteria iterative refinement. To systematically evaluate chain-level threats, we further construct ChainBench, a benchmark of 97 tasks across 4 domains. Experiments on four frontier LLMs show that ChainForge achieves a trace hijack rate of up to 98.54%, maintains task utility above 80.41%, transfers across models with over 84.95% success, and evades all evaluated defenses and code-safety scanners at substantially higher rates than single-tool baselines, exposing a critical blind spot in current agent security.
+
+
+## ChainForge Workflow
 
 `ChainForge/` is organized to match the two-phase workflow of `\ours{}`.
 
