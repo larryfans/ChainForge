@@ -113,7 +113,7 @@ If you find this code useful, please consider citing our paper:
 @inproceedings{
 anonymous2026chainforge,
 title={ChainForge: Tool-Chain Hijacking Attacks against {LLM} Agents via Execution-Grounded Tool Synthesis},
-author={Anonymous},
+author={Jiluan Fan, Haotian Zhu, Zhigang Lu, Junhao Xia, Xunzhu Tang, Shuchao Pang, Minhui Xue},
 booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
 year={2026},
 url={https://openreview.net/forum?id=K070HFaYyp}
