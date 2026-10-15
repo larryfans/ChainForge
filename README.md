@@ -103,3 +103,19 @@ The full workflow in `ChainForge/` is:
 2. Run Phase I generation for each domain with `generate_tool_param_v17.py --all-task-logs`.
 3. Use the domain-specific `*_code/readme.md` prompt to let Codex instantiate executable code.
 4. Run MCIR to improve stealthiness while preserving utility and attack execution constraints.
+
+
+
+## Citation
+
+If you find this code useful, please consider citing our paper:
+ ```bibtex
+@inproceedings{
+anonymous2026chainforge,
+title={ChainForge: Tool-Chain Hijacking Attacks against {LLM} Agents via Execution-Grounded Tool Synthesis},
+author={Anonymous},
+booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
+year={2026},
+url={https://openreview.net/forum?id=K070HFaYyp}
+}
+``` 
