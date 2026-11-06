@@ -91,9 +91,6 @@ Restricted distribution is not open. Any future access requires institutional ve
 
 **Historical material:** removing files from the current tree does not remove older Git objects, forks, or prior downloads. Historical cleanup remains unresolved; this update does not claim complete access control over earlier copies.
 
-## Scope and limitations
-
-The experiments cover synthetic, simulated environments. They do not establish that every production deployment is vulnerable, that all defenses fail, or that hidden side effects are always invisible to users. Reported variability should be interpreted according to the evaluation units specified in the paper; it does not automatically establish variability across independent attack-synthesis runs.
 
 ## Citation
 
