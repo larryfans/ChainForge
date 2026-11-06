@@ -1,0 +1,5 @@
+configuration,model,n_tasks,n_evaluation_runs,asr_mean_pct,asr_sample_std_pct,utility_mean_pct,utility_sample_std_pct,configuration_note
+No defense,GPT-5.4,97,5,85.36,0.46,78.76,1.18,No additional defense
+ToolSafe,GPT-5.4,97,5,68.45,2.97,73.40,2.23,GPT-5.4 guardian at threshold 0.5; not trained TS-Guard
+FORGE,GPT-5.4,97,5,61.65,1.34,72.58,2.14,Internal email and web-write checks; first round includes five reruns under revised authorization; aggregate mixes configurations
+FIDES,GPT-5.4,97,5,85.15,1.18,78.76,1.73,Adapted planner-level tutorial checks without inspecting tool internals

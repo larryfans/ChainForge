@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.0",
+  "kind": "user_task_membership_inventory",
+  "source_repository": "https://github.com/larryfans/ChainForge",
+  "source_commit": "b6f10ce6abfe106fd3a27bb15e34ad462b71209a",
+  "not_a_validated_attack_pair_manifest": true,
+  "tasks": [
+    {
+      "task_id": "banking:user_task_0",
+      "domain": "banking",
+      "suite_task_id": "user_task_0",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask0.json"
+    },
+    {
+      "task_id": "banking:user_task_1",
+      "domain": "banking",
+      "suite_task_id": "user_task_1",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask1.json"
+    },
+    {
+      "task_id": "banking:user_task_2",
+      "domain": "banking",
+      "suite_task_id": "user_task_2",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask2.json"
+    },
+    {
+      "task_id": "banking:user_task_3",
+      "domain": "banking",
+      "suite_task_id": "user_task_3",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask3.json"
+    },
+    {
+      "task_id": "banking:user_task_4",
+      "domain": "banking",
+      "suite_task_id": "user_task_4",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask4.json"
+    },
+    {
+      "task_id": "banking:user_task_5",
+      "domain": "banking",
+      "suite_task_id": "user_task_5",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask5.json"
+    },
+    {
+      "task_id": "banking:user_task_6",
+      "domain": "banking",
+      "suite_task_id": "user_task_6",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask6.json"
+    },
+    {
+      "task_id": "banking:user_task_7",
+      "domain": "banking",
+      "suite_task_id": "user_task_7",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask7.json"
+    },
+    {
+      "task_id": "banking:user_task_8",
+      "domain": "banking",
+      "suite_task_id": "user_task_8",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask8.json"
+    },
+    {
+      "task_id": "banking:user_task_9",
+      "domain": "banking",
+      "suite_task_id": "user_task_9",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask9.json"
+    },
+    {
+      "task_id": "banking:user_task_10",
+      "domain": "banking",
+      "suite_task_id": "user_task_10",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask10.json"
+    },
+    {
+      "task_id": "banking:user_task_11",
+      "domain": "banking",
+      "suite_task_id": "user_task_11",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask11.json"
+    },
+    {
+      "task_id": "banking:user_task_12",
+      "domain": "banking",
+      "suite_task_id": "user_task_12",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask12.json"
+    },
+    {
+      "task_id": "banking:user_task_13",
+      "domain": "banking",
+      "suite_task_id": "user_task_13",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask13.json"
+    },
+    {
+      "task_id": "banking:user_task_14",
+      "domain": "banking",
+      "suite_task_id": "user_task_14",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask14.json"
+    },
+    {
+      "task_id": "banking:user_task_15",
+      "domain": "banking",
+      "suite_task_id": "user_task_15",
+      "source_log_path": "banking_v6_auto/UserTask_log/UserTask15.json"
+    },
+    {
+      "task_id": "slack:user_task_0",
+      "domain": "slack",
+      "suite_task_id": "user_task_0",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask0.json"
+    },
+    {
+      "task_id": "slack:user_task_1",
+      "domain": "slack",
+      "suite_task_id": "user_task_1",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask1.json"
+    },
+    {
+      "task_id": "slack:user_task_2",
+      "domain": "slack",
+      "suite_task_id": "user_task_2",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask2.json"
+    },
+    {
+      "task_id": "slack:user_task_3",
+      "domain": "slack",
+      "suite_task_id": "user_task_3",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask3.json"
+    },
+    {
+      "task_id": "slack:user_task_4",
+      "domain": "slack",
+      "suite_task_id": "user_task_4",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask4.json"
+    },
+    {
+      "task_id": "slack:user_task_5",
+      "domain": "slack",
+      "suite_task_id": "user_task_5",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask5.json"
+    },
+    {
+      "task_id": "slack:user_task_6",
+      "domain": "slack",
+      "suite_task_id": "user_task_6",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask6.json"
+    },
+    {
+      "task_id": "slack:user_task_7",
+      "domain": "slack",
+      "suite_task_id": "user_task_7",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask7.json"
+    },
+    {
+      "task_id": "slack:user_task_8",
+      "domain": "slack",
+      "suite_task_id": "user_task_8",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask8.json"
+    },
+    {
+      "task_id": "slack:user_task_9",
+      "domain": "slack",
+      "suite_task_id": "user_task_9",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask9.json"
+    },
+    {
+      "task_id": "slack:user_task_10",
+      "domain": "slack",
+      "suite_task_id": "user_task_10",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask10.json"
+    },
+    {
+      "task_id": "slack:user_task_11",
+      "domain": "slack",
+      "suite_task_id": "user_task_11",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask11.json"
+    },
+    {
+      "task_id": "slack:user_task_12",
+      "domain": "slack",
+      "suite_task_id": "user_task_12",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask12.json"
+    },
+    {
+      "task_id": "slack:user_task_13",
+      "domain": "slack",
+      "suite_task_id": "user_task_13",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask13.json"
+    },
+    {
+      "task_id": "slack:user_task_14",
+      "domain": "slack",
+      "suite_task_id": "user_task_14",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask14.json"
+    },
+    {
+      "task_id": "slack:user_task_15",
+      "domain": "slack",
+      "suite_task_id": "user_task_15",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask15.json"
+    },
+    {
+      "task_id": "slack:user_task_16",
+      "domain": "slack",
+      "suite_task_id": "user_task_16",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask16.json"
+    },
+    {
+      "task_id": "slack:user_task_17",
+      "domain": "slack",
+      "suite_task_id": "user_task_17",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask17.json"
+    },
+    {
+      "task_id": "slack:user_task_18",
+      "domain": "slack",
+      "suite_task_id": "user_task_18",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask18.json"
+    },
+    {
+      "task_id": "slack:user_task_19",
+      "domain": "slack",
+      "suite_task_id": "user_task_19",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask19.json"
+    },
+    {
+      "task_id": "slack:user_task_20",
+      "domain": "slack",
+      "suite_task_id": "user_task_20",
+      "source_log_path": "slack_v6_auto/UserTask_log/UserTask20.json"
+    },
+    {
+      "task_id": "travel:user_task_0",
+      "domain": "travel",
+      "suite_task_id": "user_task_0",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask0.json"
+    },
+    {
+      "task_id": "travel:user_task_1",
+      "domain": "travel",
+      "suite_task_id": "user_task_1",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask1.json"
+    },
+    {
+      "task_id": "travel:user_task_2",
+      "domain": "travel",
+      "suite_task_id": "user_task_2",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask2.json"
+    },
+    {
+      "task_id": "travel:user_task_3",
+      "domain": "travel",
+      "suite_task_id": "user_task_3",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask3.json"
+    },
+    {
+      "task_id": "travel:user_task_4",
+      "domain": "travel",
+      "suite_task_id": "user_task_4",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask4.json"
+    },
+    {
+      "task_id": "travel:user_task_5",
+      "domain": "travel",
+      "suite_task_id": "user_task_5",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask5.json"
+    },
+    {
+      "task_id": "travel:user_task_6",
+      "domain": "travel",
+      "suite_task_id": "user_task_6",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask6.json"
+    },
+    {
+      "task_id": "travel:user_task_7",
+      "domain": "travel",
+      "suite_task_id": "user_task_7",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask7.json"
+    },
+    {
+      "task_id": "travel:user_task_8",
+      "domain": "travel",
+      "suite_task_id": "user_task_8",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask8.json"
+    },
+    {
+      "task_id": "travel:user_task_9",
+      "domain": "travel",
+      "suite_task_id": "user_task_9",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask9.json"
+    },
+    {
+      "task_id": "travel:user_task_10",
+      "domain": "travel",
+      "suite_task_id": "user_task_10",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask10.json"
+    },
+    {
+      "task_id": "travel:user_task_11",
+      "domain": "travel",
+      "suite_task_id": "user_task_11",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask11.json"
+    },
+    {
+      "task_id": "travel:user_task_12",
+      "domain": "travel",
+      "suite_task_id": "user_task_12",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask12.json"
+    },
+    {
+      "task_id": "travel:user_task_13",
+      "domain": "travel",
+      "suite_task_id": "user_task_13",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask13.json"
+    },
+    {
+      "task_id": "travel:user_task_14",
+      "domain": "travel",
+      "suite_task_id": "user_task_14",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask14.json"
+    },
+    {
+      "task_id": "travel:user_task_15",
+      "domain": "travel",
+      "suite_task_id": "user_task_15",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask15.json"
+    },
+    {
+      "task_id": "travel:user_task_16",
+      "domain": "travel",
+      "suite_task_id": "user_task_16",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask16.json"
+    },
+    {
+      "task_id": "travel:user_task_17",
+      "domain": "travel",
+      "suite_task_id": "user_task_17",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask17.json"
+    },
+    {
+      "task_id": "travel:user_task_18",
+      "domain": "travel",
+      "suite_task_id": "user_task_18",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask18.json"
+    },
+    {
+      "task_id": "travel:user_task_19",
+      "domain": "travel",
+      "suite_task_id": "user_task_19",
+      "source_log_path": "travel_v6_auto/UserTask_log/UserTask19.json"
+    },
+    {
+      "task_id": "workspace:user_task_0",
+      "domain": "workspace",
+      "suite_task_id": "user_task_0",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask0.json"
+    },
+    {
+      "task_id": "workspace:user_task_1",
+      "domain": "workspace",
+      "suite_task_id": "user_task_1",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask1.json"
+    },
+    {
+      "task_id": "workspace:user_task_2",
+      "domain": "workspace",
+      "suite_task_id": "user_task_2",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask2.json"
+    },
+    {
+      "task_id": "workspace:user_task_3",
+      "domain": "workspace",
+      "suite_task_id": "user_task_3",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask3.json"
+    },
+    {
+      "task_id": "workspace:user_task_4",
+      "domain": "workspace",
+      "suite_task_id": "user_task_4",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask4.json"
+    },
+    {
+      "task_id": "workspace:user_task_5",
+      "domain": "workspace",
+      "suite_task_id": "user_task_5",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask5.json"
+    },
+    {
+      "task_id": "workspace:user_task_6",
+      "domain": "workspace",
+      "suite_task_id": "user_task_6",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask6.json"
+    },
+    {
+      "task_id": "workspace:user_task_7",
+      "domain": "workspace",
+      "suite_task_id": "user_task_7",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask7.json"
+    },
+    {
+      "task_id": "workspace:user_task_8",
+      "domain": "workspace",
+      "suite_task_id": "user_task_8",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask8.json"
+    },
+    {
+      "task_id": "workspace:user_task_9",
+      "domain": "workspace",
+      "suite_task_id": "user_task_9",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask9.json"
+    },
+    {
+      "task_id": "workspace:user_task_10",
+      "domain": "workspace",
+      "suite_task_id": "user_task_10",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask10.json"
+    },
+    {
+      "task_id": "workspace:user_task_11",
+      "domain": "workspace",
+      "suite_task_id": "user_task_11",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask11.json"
+    },
+    {
+      "task_id": "workspace:user_task_12",
+      "domain": "workspace",
+      "suite_task_id": "user_task_12",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask12.json"
+    },
+    {
+      "task_id": "workspace:user_task_13",
+      "domain": "workspace",
+      "suite_task_id": "user_task_13",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask13.json"
+    },
+    {
+      "task_id": "workspace:user_task_14",
+      "domain": "workspace",
+      "suite_task_id": "user_task_14",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask14.json"
+    },
+    {
+      "task_id": "workspace:user_task_15",
+      "domain": "workspace",
+      "suite_task_id": "user_task_15",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask15.json"
+    },
+    {
+      "task_id": "workspace:user_task_16",
+      "domain": "workspace",
+      "suite_task_id": "user_task_16",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask16.json"
+    },
+    {
+      "task_id": "workspace:user_task_17",
+      "domain": "workspace",
+      "suite_task_id": "user_task_17",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask17.json"
+    },
+    {
+      "task_id": "workspace:user_task_18",
+      "domain": "workspace",
+      "suite_task_id": "user_task_18",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask18.json"
+    },
+    {
+      "task_id": "workspace:user_task_19",
+      "domain": "workspace",
+      "suite_task_id": "user_task_19",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask19.json"
+    },
+    {
+      "task_id": "workspace:user_task_20",
+      "domain": "workspace",
+      "suite_task_id": "user_task_20",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask20.json"
+    },
+    {
+      "task_id": "workspace:user_task_21",
+      "domain": "workspace",
+      "suite_task_id": "user_task_21",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask21.json"
+    },
+    {
+      "task_id": "workspace:user_task_22",
+      "domain": "workspace",
+      "suite_task_id": "user_task_22",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask22.json"
+    },
+    {
+      "task_id": "workspace:user_task_23",
+      "domain": "workspace",
+      "suite_task_id": "user_task_23",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask23.json"
+    },
+    {
+      "task_id": "workspace:user_task_24",
+      "domain": "workspace",
+      "suite_task_id": "user_task_24",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask24.json"
+    },
+    {
+      "task_id": "workspace:user_task_25",
+      "domain": "workspace",
+      "suite_task_id": "user_task_25",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask25.json"
+    },
+    {
+      "task_id": "workspace:user_task_26",
+      "domain": "workspace",
+      "suite_task_id": "user_task_26",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask26.json"
+    },
+    {
+      "task_id": "workspace:user_task_27",
+      "domain": "workspace",
+      "suite_task_id": "user_task_27",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask27.json"
+    },
+    {
+      "task_id": "workspace:user_task_28",
+      "domain": "workspace",
+      "suite_task_id": "user_task_28",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask28.json"
+    },
+    {
+      "task_id": "workspace:user_task_29",
+      "domain": "workspace",
+      "suite_task_id": "user_task_29",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask29.json"
+    },
+    {
+      "task_id": "workspace:user_task_30",
+      "domain": "workspace",
+      "suite_task_id": "user_task_30",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask30.json"
+    },
+    {
+      "task_id": "workspace:user_task_31",
+      "domain": "workspace",
+      "suite_task_id": "user_task_31",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask31.json"
+    },
+    {
+      "task_id": "workspace:user_task_32",
+      "domain": "workspace",
+      "suite_task_id": "user_task_32",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask32.json"
+    },
+    {
+      "task_id": "workspace:user_task_33",
+      "domain": "workspace",
+      "suite_task_id": "user_task_33",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask33.json"
+    },
+    {
+      "task_id": "workspace:user_task_34",
+      "domain": "workspace",
+      "suite_task_id": "user_task_34",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask34.json"
+    },
+    {
+      "task_id": "workspace:user_task_35",
+      "domain": "workspace",
+      "suite_task_id": "user_task_35",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask35.json"
+    },
+    {
+      "task_id": "workspace:user_task_36",
+      "domain": "workspace",
+      "suite_task_id": "user_task_36",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask36.json"
+    },
+    {
+      "task_id": "workspace:user_task_37",
+      "domain": "workspace",
+      "suite_task_id": "user_task_37",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask37.json"
+    },
+    {
+      "task_id": "workspace:user_task_38",
+      "domain": "workspace",
+      "suite_task_id": "user_task_38",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask38.json"
+    },
+    {
+      "task_id": "workspace:user_task_39",
+      "domain": "workspace",
+      "suite_task_id": "user_task_39",
+      "source_log_path": "workspace_v6_auto/UserTask_log/UserTask39.json"
+    }
+  ]
+}

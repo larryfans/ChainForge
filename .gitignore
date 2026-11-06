@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+key.md
+.venv/
+venv/
+restricted/
+private/
+access_records/
+disclosure_records/

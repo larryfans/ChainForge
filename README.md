@@ -1,121 +1,112 @@
-# ChainForge: Tool-Chain Hijacking Attacks against LLM Agents via Execution-Grounded Tool Synthesis
-## 🎉🎉🎉 Accepted by The Fortieth Annual Conference on Neural Information Processing Systems
+<div align="center">
 
-## Abstract
-LLM-based agents increasingly rely on external tools to accomplish complex tasks, yet the security of tool-calling pipelines remains poorly understood at the chain level. Prior attacks target individual tool invocations through prompt injection or metadata manipulation, but compromising a single step in a multi-step workflow is conspicuous and rarely sufficient for complex adversarial objectives. In this work, we uncover a more insidious yet realistic attack surface, tool-chain hijacking, in which an adversary constructs a coherent sequence of tools that collectively replace the agent's intended execution trace while still completing the user's task correctly, rendering the hijack invisible to both the agent and the user. To operationalize this threat, we propose ChainForge, an execution-grounded framework that mines agent execution logs to synthesize replacement chains through rollout-based optimization, then embeds adversarial payloads into the chain's code via multi-criteria iterative refinement. To systematically evaluate chain-level threats, we further construct ChainBench, a benchmark of 97 tasks across 4 domains. Experiments on four frontier LLMs show that ChainForge achieves a trace hijack rate of up to 98.54%, maintains task utility above 80.41%, transfers across models with over 84.95% success, and evades all evaluated defenses and code-safety scanners at substantially higher rates than single-tool baselines, exposing a critical blind spot in current agent security.
+# ChainForge
 
+**Tool-Chain Hijacking Attacks against LLM Agents**  
+**via Execution-Grounded Tool Synthesis**
 
-## ChainForge Workflow
+**NeurIPS 2026 · Poster**
 
-`ChainForge/` is organized to match the two-phase workflow of `\ours{}`.
+[Paper](https://openreview.net/forum?id=K070HFaYyp) · [ChainBench](#chainbench) · [Results](#selected-results) · [Release policy](RELEASE_POLICY.md) · [Citation](#citation)
 
-- **Phase I** synthesizes a task-specific metadata-level tool chain that is grounded in reference tool calls and optimized to attract the agent into the generated trajectory.
-- **Phase II** instantiates that optimized chain as executable tool code, preserves benign utility, embeds the adversarial payload, and finally refines the code with MCIR to improve stealth while maintaining execution constraints.
+</div>
 
-This repository snapshot should be read together with the method description:
+ChainForge studies how third-party tools can collectively redirect an LLM agent's workflow while preserving user-visible task utility. The findings highlight an observation boundary: defenses can govern only the actions and information flows represented at their enforcement boundary, which may leave tool-internal side effects outside their view.
 
-> **Phase I** synthesizes a task-specific metadata-level tool chain, grounded in reference tool calls, and optimizes its descriptions and staged outputs to attract the agent into the generated trajectory.  
-> **Phase II** instantiates the optimized metadata chain into executable tool code, preserving task utility while embedding adversarial payloads through multi-criteria iterative refinement.
+This repository hosts **ChainBench documentation, a sanitized task inventory, reported results, and defensive-evaluation materials**. The complete sanitized artifact release is still in preparation.
 
-## Environment Setup
+## Research overview
 
-Install the Python environment from the `ChainForge/` root:
+The study examines tool-chain hijacking across four simulated application domains. It evaluates both reference-trace-grounded configurations and a setting using only public tool schemas and the target task, without victim traces or probing.
 
-```bash
-pip install -r requirements.txt
-```
+The method combines joint workflow construction with code instantiation and refinement. Operational attack-generation, evasion, and restoration components belong to the restricted artifact tier described below.
 
-## Phase I: Chain-Level Hijack Optimization
+![Conceptual overview of workflow integrity and defense visibility](assets/overview.svg)
 
-Phase I operates at the metadata level. For each domain, run the domain-specific generator to synthesize the staged tool chain from all task logs.
+## ChainBench
 
-Reference command pattern:
+**97 task–attack pairs · 4 domains · 4 evaluated LLM agents**
 
-```bash
-PYTHONPATH=. python <domain>_v6_auto/generate_tool_param_v17.py --all-task-logs
-```
+| Domain | Task–attack pairs |
+| :--- | ---: |
+| Banking | 16 |
+| Slack | 21 |
+| Travel | 20 |
+| Workspace | 40 |
+| **Total** | **97** |
 
-Example domain commands:
+The benchmark pairs legitimate user tasks with adversarial objectives in synthetic environments. All experiments use synthetic data and simulated endpoints; no real service was attacked.
 
-```bash
-PYTHONPATH=. python banking_v6_auto/generate_tool_param_v17.py --all-task-logs
-PYTHONPATH=. python slack_v6_auto/generate_tool_param_v17.py --all-task-logs
-PYTHONPATH=. python travel_v6_auto/generate_tool_param_v17.py --all-task-logs
-PYTHONPATH=. python workspace_v6_auto/generate_tool_param_v17.py --all-task-logs
-```
+The [public inventory](benchmark/task_inventory.json) lists the 97 user-task IDs. It is a task-membership inventory; the complete validated attack-pair manifest remains in preparation. See [benchmark notes](benchmark/README.md) and the [evaluation protocol](evaluation/PROTOCOL.md).
 
-The goal of this stage is to produce optimized metadata-level chains whose tool descriptions, parameters, and staged outputs create semantic momentum and make the generated trajectory the path of least resistance for the agent.
+## Selected results
 
-## Phase II: Utility-Preserving Code Instantiation
+| Evaluation | Reported result | Scope |
+| :--- | :--- | :--- |
+| Full system | Up to **98.54% TSR** | Highest reported trace-hijack success under the evaluated configurations |
+| Cross-model transfer | Up to **84.95% TSR** | Cross-model trace-hijack success; distinct from executable attack success |
+| Fixed three-tool chains | **81.44% vs. 78.35% TSR** | ChainForge vs. AMA-Chain; a **3.09 percentage-point** aggregate gain |
+| Public schemas and target task only | **83.78% TSR; 85.95% ASR** | L3: Banking + Slack, 37 tasks; no victim traces or probing |
 
-Phase II turns the optimized metadata chain into executable code. The implementation objective follows the paper directly:
+TSR measures trace-hijack success, ASR measures executable attack success, and utility measures legitimate task completion. Results from different configurations should not be interpreted as a single shared operating point. Full-system gains also include adaptive chain-length selection.
 
-```text
-c_i^* = argmax_c MI(c, g_i) * TFUR(c, q) * IPP(c, psi)
-```
+### Chain-aware defense evaluation
 
-where:
+Reported mean ± sample standard deviation over five evaluation runs, on 97 tasks with GPT-5.4:
 
-- `MI` enforces metadata invariance with the Phase I tool specification.
-- `TFUR` enforces benign-task completion without replaying constants from ground-truth traces.
-- `IPP` preserves a deterministic execution path that embeds the payload.
+| Configuration | ASR (%) ↓ | Utility (%) ↑ |
+| :--- | ---: | ---: |
+| No defense | 85.36 ± 0.46 | 78.76 ± 1.18 |
+| ToolSafe | 68.45 ± 2.97 | 73.40 ± 2.23 |
+| FORGE | 61.65 ± 1.34 | 72.58 ± 2.14 |
+| FIDES | 85.15 ± 1.18 | 78.76 ± 1.73 |
 
-For code instantiation, use the domain-specific instructions in:
+ToolSafe and FORGE reduce ASR under the reported implementations and configurations. These results characterize their evaluated observation boundaries rather than universal guarantees about the defenses. ToolSafe uses a GPT-5.4 guardian; FORGE aggregates rounds that include a revised authorization configuration; FIDES uses planner-level information-flow checks. See the paper's additional-defense appendix for the full setup and limitations.
 
-- [banking_code/readme.md](banking_code/readme.md)
-- [slack_code/readme.md](slack_code/readme.md)
-- [travel_code/readme.md](travel_code/readme.md)
-- [workspace_code/readme.md](workspace_code/readme.md)
+## Public artifacts
 
-These prompts define how Codex should:
+The following statuses describe this maintenance update, not a complete artifact release.
 
-1. instantiate executable `user_task_X.py` implementations from the Phase I metadata chain,
-2. construct `injection_task_X.py` variants while preserving utility, and
-3. keep the generated code within the static and dynamic constraints used in evaluation.
+| Artifact | Status |
+| :--- | :--- |
+| [Sanitized user-task inventory](benchmark/task_inventory.json) | Available; validated attack-pair mapping in preparation |
+| [Metric definitions and evaluation protocol](evaluation/PROTOCOL.md) | Available |
+| [Reported defense aggregates](results/additional_defenses.csv) and [summary code](analysis/summarize_results.py) | Available; not raw evaluation records |
+| [Additional defense configuration notes](defenses/README.md) | Available; runnable reproductions in preparation |
+| Executable malicious tools, operational prompts, and end-to-end synthesis | Removed from the current public tree; restricted distribution not open |
 
-## MCIR: Stealthy Refinement
-
-After executable code is generated, use MCIR to improve stealth while preserving task utility and attack validity. This corresponds to the refinement stage in the method section:
-
-```text
-c_i^* = argmax_c TCSC(c, m_i)
-subject to
-SA(c) >= theta_sa,
-PUR(c) >= theta_pur,
-V_util(c) = true,
-V_atk(c) = true
-```
-
-In this repository, MCIR is implemented in [MCIR/README.md](MCIR/README.md) and the `MCIR/` module.
-
-Typical usage is:
+### View the reported results
 
 ```bash
-cd MCIR
-python run_mcir.py --scenario path/to/scenario.py --objective "your adversarial objective"
+python3 analysis/summarize_results.py
 ```
 
-## End-to-End Summary
+Run from the repository root. This standard-library command validates and formats the bundled aggregate table without API keys, network access, or attack execution. It does not rerun the underlying experiments. See [results and provenance](results/README.md).
 
-The full workflow in `ChainForge/` is:
+## Responsible release
 
-1. Install the environment with `pip install -r requirements.txt`.
-2. Run Phase I generation for each domain with `generate_tool_param_v17.py --all-task-logs`.
-3. Use the domain-specific `*_code/readme.md` prompt to let Codex instantiate executable code.
-4. Run MCIR to improve stealthiness while preserving utility and attack execution constraints.
+The [release policy](RELEASE_POLICY.md) separates public scientific evidence from operational components. Restricted-access and security inquiries: **[fanjiluan@gmail.com](mailto:fanjiluan@gmail.com)**. Do not submit affiliation documents or sensitive details through public Issues.
 
+Restricted distribution is not open. Any future access requires institutional verification, defensive-use terms, access logging, and staged review prioritizing defenders. [Disclosure status](SECURITY.md#coordinated-disclosure-status) is not yet publicly documented as completed.
 
+**Historical material:** removing files from the current tree does not remove older Git objects, forks, or prior downloads. Historical cleanup remains unresolved; this update does not claim complete access control over earlier copies.
+
+## Scope and limitations
+
+The experiments cover synthetic, simulated environments. They do not establish that every production deployment is vulnerable, that all defenses fail, or that hidden side effects are always invisible to users. Reported variability should be interpreted according to the evaluation units specified in the paper; it does not automatically establish variability across independent attack-synthesis runs.
 
 ## Citation
 
-If you find this code useful, please consider citing our paper:
- ```bibtex
-@inproceedings{
-anonymous2026chainforge,
-title={ChainForge: Tool-Chain Hijacking Attacks against {LLM} Agents via Execution-Grounded Tool Synthesis},
-author={Jiluan Fan, Haotian Zhu, Zhigang Lu, Junhao Xia, Xunzhu Tang, Shuchao Pang, Minhui Xue},
-booktitle={The Fortieth Annual Conference on Neural Information Processing Systems},
-year={2026},
-url={https://openreview.net/forum?id=K070HFaYyp}
+```bibtex
+@inproceedings{fan2026chainforge,
+  title     = {ChainForge: Tool-Chain Hijacking Attacks against {LLM} Agents via Execution-Grounded Tool Synthesis},
+  author    = {Jiluan Fan and Haotian Zhu and Zhigang Lu and Junhao Xia and Xunzhu Tang and Shuchao Pang and Jason Xue},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=K070HFaYyp}
 }
-``` 
+```
+
+## Acknowledgments and license
+
+The synthetic environment and local `agentdojo/` source derive from [AgentDojo](https://github.com/ethz-spylab/agentdojo). Public code is distributed under the [MIT license](LICENSE), subject to applicable third-party notices. Restricted artifact access is governed separately by the [release policy](RELEASE_POLICY.md).
