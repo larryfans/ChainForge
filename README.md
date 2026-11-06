@@ -21,7 +21,9 @@ The study examines tool-chain hijacking across four simulated application domain
 
 The method combines joint workflow construction with code instantiation and refinement. Operational attack-generation, evasion, and restoration components belong to the restricted artifact tier described below.
 
-![Conceptual overview of workflow integrity and defense visibility](assets/overview.svg)
+![Figure 1. Overview of ChainForge](assets/figure1_framework.png)
+
+**Figure 1.** Overview of the trace-grounded configuration. The L3 setting instead uses public tool schemas and the target task without victim traces or probing.
 
 ## ChainBench
 
@@ -50,18 +52,16 @@ The [public inventory](benchmark/task_inventory.json) lists the 97 user-task IDs
 
 TSR measures trace-hijack success, ASR measures executable attack success, and utility measures legitimate task completion. Results from different configurations should not be interpreted as a single shared operating point. Full-system gains also include adaptive chain-length selection.
 
-### Chain-aware defense evaluation
+### Runtime defense evaluation
 
-Reported mean ± sample standard deviation over five evaluation runs, on 97 tasks with GPT-5.4:
+<p align="center">
+  <img src="assets/figure2a_targeted_asr.png" alt="Figure 2a. Targeted attack success versus utility without attack" width="49%" />
+  <img src="assets/figure2b_utility.png" alt="Figure 2b. Utility with attack versus utility without attack" width="49%" />
+</p>
 
-| Configuration | ASR (%) ↓ | Utility (%) ↑ |
-| :--- | ---: | ---: |
-| No defense | 85.36 ± 0.46 | 78.76 ± 1.18 |
-| ToolSafe | 68.45 ± 2.97 | 73.40 ± 2.23 |
-| FORGE | 61.65 ± 1.34 | 72.58 ± 2.14 |
-| FIDES | 85.15 ± 1.18 | 78.76 ± 1.73 |
+**Figure 2.** (a) Targeted attack success and (b) task utility for the paper's original seven runtime-defense configurations and the no-defense baseline. The panels share the legend in (a); the dashed diagonal in (b) indicates unchanged utility.
 
-ToolSafe and FORGE reduce ASR under the reported implementations and configurations. These results characterize their evaluated observation boundaries rather than universal guarantees about the defenses. ToolSafe uses a GPT-5.4 guardian; FORGE aggregates rounds that include a revised authorization configuration; FIDES uses planner-level information-flow checks. See the paper's additional-defense appendix for the full setup and limitations.
+Additional ToolSafe, FORGE, and FIDES configurations and reported results are documented separately in [defense notes](defenses/README.md) and [results](results/README.md).
 
 ## Public artifacts
 
